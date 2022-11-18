@@ -3,7 +3,6 @@ on: [push]
 jobs:
   eslint:
     name: runner / eslint
-    working-directory: ./docs-web/src/main/webapp
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -11,6 +10,7 @@ jobs:
         with:
           node-version: '14'
       - run: npm install
+        working-directory: ./docs-web/src/main/webapp
         
       - uses: reviewdog/action-eslint@v1
         with:
