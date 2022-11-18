@@ -13,6 +13,8 @@ jobs:
       with:
         node-version: 12
 
+    - run: yarn install
+
     - name: Compile with Grunt
       uses: elstudio/actions-js-build/build@v4
       with:
