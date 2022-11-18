@@ -149,6 +149,9 @@ module.exports = function(grunt) {
     retire: {
       js: ['src/**'], /** Scan js-files in app/src/ directory and subdirectories. **/
       // node: ['node_modules/**'],
+      options: {
+        ignore: 'src/lib/angular.js'
+      }
     }
   });
 
