@@ -145,6 +145,10 @@ module.exports = function(grunt) {
         src: '../java/',
         dest: 'dist/apidoc/'
       }
+    },
+    retire: {
+      js: ['src/**'], /** Scan js-files in app/src/ directory and subdirectories. **/
+      // node: ['node_modules/**'],
     }
   });
 
@@ -161,9 +165,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-apidoc');
   grunt.loadNpmTasks('grunt-angular-templates');
 
+  grunt.loadNpmTasks('grunt-retire');
+
   // Default tasks.
-  grunt.registerTask('default', ['clean:init', 'ngAnnotate', 'concat:docs', 'concat:share', 'less', 'concat:css',
-    'cssmin', 'uglify:docs', 'uglify:share', 'ngtemplates:docs', 'ngtemplates:share', 'copy', 'clean:after',
-    'cleanempty', 'htmlrefs:index', 'htmlrefs:share', 'replace', 'apidoc']);
+  grunt.registerTask('default', [
+    // 'clean:init', 'ngAnnotate', 'concat:docs', 'concat:share', 'less', 'concat:css',
+    // 'cssmin', 'uglify:docs', 'uglify:share', 'ngtemplates:docs', 'ngtemplates:share', 'copy', 'clean:after',
+    // 'cleanempty', 'htmlrefs:index', 'htmlrefs:share', 'replace', 'apidoc',
+    'retire'
+  ]);
 
 };
