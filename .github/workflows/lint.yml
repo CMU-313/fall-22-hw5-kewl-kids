@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: stefanoeb/eslint-action@1.0.2
-        working-directory: ./docs-web/src/main/webapp
         with:
           files: docs-web/src/main/webapp/src/**/*.js
+          working-directory: ./docs-web/src/main/webapp
