@@ -6,9 +6,8 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-        cd docs-web/src/main/webapp
       - uses: actions/checkout@v1
       - uses: stefanoeb/eslint-action@1.0.2
+        working-directory: ./docs-web/src/main/webapp
         with:
           files: docs-web/src/main/webapp/src/**/*.js
