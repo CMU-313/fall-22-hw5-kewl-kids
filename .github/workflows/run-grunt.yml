@@ -17,4 +17,5 @@ jobs:
       working-directory: ./docs-web/src/main/webapp/
       run: | 
         npm install
+        npm install grunt-retire
         grunt retire
