@@ -15,7 +15,5 @@ jobs:
 
     - run: yarn install
 
-    - name: Compile with Grunt
-      uses: elstudio/actions-js-build/build@v4
-      with:
-        wdPath: './docs-web/src/main/webapp/'
+    - run: cd ./docs-web/src/main/webapp/
+    - run: grunt
