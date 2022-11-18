@@ -13,4 +13,4 @@ jobs:
         with:
           reporter: github-pr-review # Change reporter.
           eslint_flags: 'src/'
-          workdir: ./docs-web/src/main/webapp
+          workdir: './docs-web/src/main/webapp'
