@@ -1,13 +1,16 @@
 name: Lint
-
 on: [push]
-
 jobs:
   eslint:
+    name: runner / eslint
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write 
     steps:
-      - uses: actions/checkout@v1
-      - uses: stefanoeb/eslint-action@1.0.2
+      - uses: actions/checkout@v2
+      - uses: reviewdog/action-eslint@v1
         with:
-          files: docs-web/src/main/webapp/src/**/*.js
-          working-directory: ./docs-web/src/main/webapp
+          reporter: github-pr-review # Change reporter.
+          eslint_flags: 'src/'
+          workdir: ./docs-web/src/main/webapp
